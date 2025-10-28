@@ -1,0 +1,19 @@
+{
+  "skills": [
+    {
+      "name": "approach",
+      "type": "rule",
+      "class": "org.firstinspires.ftc.teamcode.jarvis.ApproachRule"
+    },
+    {
+      "name": "dock",
+      "type": "rule",
+      "class": "org.firstinspires.ftc.teamcode.jarvis.DockRule"
+    },
+    {
+      "name": "dock_nn",
+      "type": "mlp",
+      "file": "dock_mlp.json"
+    }
+  ]
+}
