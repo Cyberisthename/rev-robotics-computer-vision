@@ -1,0 +1,47 @@
+plugins {
+    id "com.android.library"
+}
+
+android {
+    namespace "org.firstinspires.ftc.teamcode"
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 33
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ["src/main/java"]
+            manifest.srcFile "src/main/AndroidManifest.xml"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    maven {
+        url "https://maven.pkg.github.com/FIRST-Tech-Challenge/FtcRobotController"
+        credentials {
+            username = findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+            password = findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
+        }
+    }
+}
+
+dependencies {
+    compileOnly "org.firstinspires.ftc:RobotCore:9.2.0"
+    compileOnly "org.firstinspires.ftc:Hardware:9.2.0"
+    compileOnly "org.firstinspires.ftc:FtcCommon:9.2.0"
+    compileOnly "org.firstinspires.ftc:Vision:9.2.0"
+    compileOnly "org.firstinspires.ftc:Inspection:9.2.0"
+    compileOnly "androidx.annotation:annotation:1.6.0"
+}
